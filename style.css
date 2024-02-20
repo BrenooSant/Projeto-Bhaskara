@@ -19,7 +19,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: -40px;
+  margin-top: -46px;
+  padding: 5px;
 }
 
 #titulo h3{

@@ -15,9 +15,6 @@ let x1 = ( (numberb * (-1)) + Math.sqrt(delta))/(2*numbera)
 let x2 = ( (numberb * (-1)) - Math.sqrt(delta))/(2*numbera)
 console.log("x1: ",  x1, "; x2: ", x2,);
 
-
-
-
 const ResultadoX1= document.getElementById('resultX1')
 ResultadoX1.value=  x1
 
@@ -26,9 +23,6 @@ ResultadoX2.value= x2
 
 const ResultadoDelta= document.getElementById('resultD')
 ResultadoDelta.value= delta
-
-
-
 
 }
 
