@@ -1,29 +1,36 @@
-const a = document.getElementById("a")
-const b = document.getElementById("b")
-const c = document.getElementById("c")
-const ok = document.getElementById ("btn")
+const a = document.getElementById("a");
+const b = document.getElementById("b");
+const c = document.getElementById("c");
+const btn = document.getElementById("btn");
 
+function calcularBhaskara() {
+    const numberA = Number(a.value);
+    const numberB = Number(b.value);
+    const numberC = Number(c.value);
 
-function clique () {
-let numbera = Number(a.value)
-let numberb = Number(b.value)
-let numberc = Number(c.value)
+    if (!numberA || !numberB || !numberC) {
+        alert("Por favor, preencha todos os valores corretamente.");
+        return;
+    }
 
-let delta =Math.pow (numberb, 2) + (-1 * (4*numbera*numberc))
-console.log(numberc);
-let x1 = ( (numberb * (-1)) + Math.sqrt(delta))/(2*numbera)
-let x2 = ( (numberb * (-1)) - Math.sqrt(delta))/(2*numbera)
-console.log("x1: ",  x1, "; x2: ", x2,);
+    if (numberA === 0) {
+        alert("O valor de A não pode ser zero em uma equação quadrática.");
+        return;
+    }
 
-const ResultadoX1= document.getElementById('resultX1')
-ResultadoX1.value=  x1
+    const delta = Math.pow(numberB, 2) - 4 * numberA * numberC;
 
-const ResultadoX2= document.getElementById('resultX2')
-ResultadoX2.value= x2
+    if (delta < 0) {
+        alert("Delta negativo! A equação não possui raízes reais.");
+        return;
+    }
 
-const ResultadoDelta= document.getElementById('resultD')
-ResultadoDelta.value= delta
+    const x1 = (-numberB + Math.sqrt(delta)) / (2 * numberA);
+    const x2 = (-numberB - Math.sqrt(delta)) / (2 * numberA);
 
+    document.getElementById("resultX1").value = x1.toFixed(2);
+    document.getElementById("resultX2").value = x2.toFixed(2);
+    document.getElementById("resultD").value = delta.toFixed(2);
 }
 
-ok.onclick = clique
+btn.onclick = calcularBhaskara;
